@@ -12,10 +12,11 @@
   --line: #d9dee8;
   --bg: #f6f7f9;
   --white: #ffffff;
-  --blue: #0b84ff;
-  --navy: #050619;
-  --tag: #eef1f6;
-  --light-blue: #eaf3ff;
+  --blue: #6648c6;
+  --blue-dark: #5536b2;
+  --blue-deep: #2e1a75;
+  --navy: #2e1a75;
+  --light-blue: #f3f0ff;
 }
 
 * {
@@ -47,16 +48,16 @@ a {
   position: relative;
   min-height: 620px;
   overflow: hidden;
-  color: var(--text);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 96px 32px;
   text-align: center;
   background:
-    radial-gradient(circle at 82% 28%, rgba(102, 72, 198, 0.14), transparent 30%),
-    radial-gradient(circle at 18% 72%, rgba(11, 132, 255, 0.11), transparent 34%),
-    linear-gradient(180deg, #ffffff 0%, #f7fbff 52%, #eef7ff 100%);
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.22), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.28), transparent 34%),
+    linear-gradient(135deg, #6648c6 0%, #5536b2 48%, #2e1a75 100%);
 }
 
 /* 薄いグリッド */
@@ -65,10 +66,10 @@ a {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0, 74, 173, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 74, 173, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 56px 56px;
-  opacity: 0.55;
+  opacity: 0.45;
   mask-image: radial-gradient(circle at 50% 50%, black 0%, transparent 76%);
   z-index: 0;
   pointer-events: none;
@@ -83,13 +84,13 @@ a {
   width: 540px;
   height: 360px;
   background:
-    radial-gradient(circle at 30% 35%, rgba(11, 132, 255, 0.16) 0 3px, transparent 4px),
-    radial-gradient(circle at 62% 25%, rgba(102, 72, 198, 0.14) 0 3px, transparent 4px),
-    radial-gradient(circle at 70% 68%, rgba(0, 151, 178, 0.14) 0 3px, transparent 4px),
-    linear-gradient(135deg, transparent 0 45%, rgba(11, 132, 255, 0.10) 46% 47%, transparent 48%),
-    linear-gradient(30deg, transparent 0 54%, rgba(102, 72, 198, 0.08) 55% 56%, transparent 57%);
+    radial-gradient(circle at 30% 35%, rgba(255, 255, 255, 0.18) 0 3px, transparent 4px),
+    radial-gradient(circle at 62% 25%, rgba(216, 180, 254, 0.26) 0 3px, transparent 4px),
+    radial-gradient(circle at 70% 68%, rgba(129, 140, 248, 0.22) 0 3px, transparent 4px),
+    linear-gradient(135deg, transparent 0 45%, rgba(255, 255, 255, 0.14) 46% 47%, transparent 48%),
+    linear-gradient(30deg, transparent 0 54%, rgba(216, 180, 254, 0.16) 55% 56%, transparent 57%);
   border-radius: 50%;
-  opacity: 0.65;
+  opacity: 0.75;
   z-index: 0;
   pointer-events: none;
 }
@@ -107,13 +108,13 @@ a {
   line-height: 1.35;
   margin: 0 0 28px;
   letter-spacing: 0.03em;
-  color: #111827;
+  color: #fff;
 }
 
 .hero p {
   max-width: 760px;
   margin: 0 auto 34px;
-  color: #374151;
+  color: rgba(255, 255, 255, 0.86);
   font-size: 15px;
   text-align: center;
 }
@@ -155,10 +156,33 @@ a {
   color: #fff;
 }
 
+.btn-primary:hover {
+  background: var(--blue-dark);
+}
+
 .btn-secondary {
   background: #fff;
   color: var(--text);
   border: 1px solid var(--line);
+}
+
+.hero .btn-primary {
+  background: #fff;
+  color: var(--blue-dark);
+}
+
+.hero .btn-primary:hover {
+  background: var(--light-blue);
+}
+
+.hero .btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+}
+
+.hero .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
 
 /* =========================
@@ -315,6 +339,12 @@ a {
   cursor: pointer;
 }
 
+.tab:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: var(--light-blue);
+}
+
 .tab.is-active {
   background: var(--navy);
   color: #fff;
@@ -337,6 +367,7 @@ a {
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 28px;
+  min-height: 280px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -345,21 +376,6 @@ a {
 
 .service-card.is-hidden {
   display: none;
-}
-
-.service-icon {
-  width: 72px;
-  height: 72px;
-  border-radius: 20px;
-  background: var(--light-blue);
-  color: var(--blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  flex-shrink: 0;
 }
 
 .service-content {
@@ -381,24 +397,6 @@ a {
   font-size: 14px;
 }
 
-.tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 22px;
-}
-
-.tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: var(--tag);
-  color: #4b5563;
-  font-size: 12px;
-  font-weight: 700;
-}
-
 .service-content .btn {
   margin-top: auto;
   align-self: flex-start;
@@ -409,21 +407,34 @@ a {
 ========================= */
 
 .cta {
-  background: linear-gradient(135deg, #f1f3f7, #ffffff);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.22), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.28), transparent 34%),
+    linear-gradient(135deg, #6648c6 0%, #5536b2 48%, #2e1a75 100%);
+  color: #fff;
   text-align: center;
   padding: 96px 56px;
-  border-top: 1px solid var(--line);
 }
 
 .cta h2 {
   font-size: 32px;
   margin: 0 0 16px;
+  color: #fff;
 }
 
 .cta p {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.86);
   margin: 0 0 28px;
   font-size: 15px;
+}
+
+.cta .btn-primary {
+  background: #fff;
+  color: var(--blue-dark);
+}
+
+.cta .btn-primary:hover {
+  background: var(--light-blue);
 }
 
 .wire-note {
@@ -615,7 +626,8 @@ a {
         <div class="section-title">
           <h2>AI・データ活用で実現したいこと</h2>
           <p>
-AI活用の目的整理から、社内ナレッジの活用、データ分析、セキュリティを考慮した運用設計まで、実現したい活用シーンに応じて支援します。    </p>
+            AI活用の目的整理から、社内ナレッジの活用、データ分析、セキュリティを考慮した運用設計まで、実現したい活用シーンに応じて支援します。
+          </p>
         </div>
 
         <table class="problem-table">
@@ -704,8 +716,6 @@ AI活用の目的整理から、社内ナレッジの活用、データ分析、
             class="service-card"
             data-categories="planning data-platform rag cloud security production"
           >
-          
-
             <div class="service-content">
               <h3>AI Ready Platform on OCI 導入支援サービス</h3>
 
@@ -713,14 +723,6 @@ AI活用の目的整理から、社内ナレッジの活用、データ分析、
                 散在する社内データを統合し、生成AI・RAG・AIエージェントが活用できる
                 AIデータプラットフォームをOCI上に構築する導入支援サービスです。
               </p>
-
-              <div class="tags">
-                <span class="tag">データ統合</span>
-                <span class="tag">AI活用基盤</span>
-                <span class="tag">RAG</span>
-                <span class="tag">OCI</span>
-                <span class="tag">セキュリティ</span>
-              </div>
 
               <a href="https://cloudmiko.jp/lp/ai-ready-platform-on-oci/" class="btn btn-primary">詳しく見る</a>
             </div>
@@ -730,8 +732,6 @@ AI活用の目的整理から、社内ナレッジの活用、データ分析、
             class="service-card"
             data-categories="data-platform"
           >
-         
-
             <div class="service-content">
               <h3>CData Sync 導入・データ連携支援</h3>
 
@@ -739,13 +739,6 @@ AI活用の目的整理から、社内ナレッジの活用、データ分析、
                 SaaS、データベース、クラウドサービスなどに分散したデータを連携・同期し、
                 分析・AI活用に必要なデータ統合基盤の整備を支援します。
               </p>
-
-              <div class="tags">
-                <span class="tag">データ連携</span>
-                <span class="tag">データ統合</span>
-                <span class="tag">AI活用基盤</span>
-                <span class="tag">SaaS連携</span>
-              </div>
 
               <a href="https://www.s-style.co.jp/products/cdata" class="btn btn-primary">詳しく見る</a>
             </div>
@@ -763,12 +756,6 @@ AI活用の目的整理から、社内ナレッジの活用、データ分析、
                 設計・構築を支援する想定サービスです。
               </p>
 
-              <div class="tags">
-                <span class="tag">RAG</span>
-                <span class="tag">AIチャット</span>
-                <span class="tag">社内データ活用</span>
-              </div>
-
               <a href="#" class="btn btn-primary">詳しく見る</a>
             </div>
           </article>
@@ -784,12 +771,6 @@ AI活用の目的整理から、社内ナレッジの活用、データ分析、
                 機密情報や個人情報を扱うAI活用に向けて、権限管理、利用ルール、監査性などを考慮した
                 安全な利用環境づくりを支援する想定サービスです。
               </p>
-
-              <div class="tags">
-                <span class="tag">セキュリティ</span>
-                <span class="tag">ガバナンス</span>
-                <span class="tag">権限管理</span>
-              </div>
 
               <a href="#" class="btn btn-primary">詳しく見る</a>
             </div>
@@ -807,12 +788,6 @@ AI活用の目的整理から、社内ナレッジの活用、データ分析、
                 実運用化支援を想定したサービスです。
               </p>
 
-              <div class="tags">
-                <span class="tag">PoC</span>
-                <span class="tag">MVP</span>
-                <span class="tag">本番展開</span>
-              </div>
-
               <a href="#" class="btn btn-primary">詳しく見る</a>
             </div>
           </article>
@@ -828,12 +803,6 @@ AI活用の目的整理から、社内ナレッジの活用、データ分析、
                 既存のデータベースやクラウド環境を活かしながら、AI・データ活用に必要な
                 データ基盤の整備を支援する想定サービスです。
               </p>
-
-              <div class="tags">
-                <span class="tag">クラウド</span>
-                <span class="tag">データ基盤</span>
-                <span class="tag">DB活用</span>
-              </div>
 
               <a href="#" class="btn btn-primary">詳しく見る</a>
             </div>

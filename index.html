@@ -956,6 +956,122 @@
       }
     }
 
+
+    /* =========================
+       Service card category labels
+       DB / Cloud とカード見た目を統一
+    ========================= */
+
+    .card-label {
+      display: inline-flex;
+      width: fit-content;
+      margin: 0 0 14px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: #FDE8E9;
+      color: #ED1C24;
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1.4;
+    }
+
+
+    /* =========================
+       Issues Cards
+       DB / Cloud と同じカード形式に統一
+    ========================= */
+
+    .issue-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .issue-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
+    }
+
+    .issue-card-head {
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--line);
+      background: var(--brand-bg);
+    }
+
+    .issue-card-head h3 {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.55;
+      letter-spacing: 0.02em;
+    }
+
+    .issue-card-body {
+      padding: 24px;
+    }
+
+    .issue-card-body > p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.95;
+    }
+
+    .issue-support-box {
+      padding: 18px 18px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      margin-bottom: 18px;
+    }
+
+    .issue-support-box h4 {
+      margin: 0 0 8px;
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 900;
+    }
+
+    .issue-support-box p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .issue-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--brand-red);
+      font-size: 14px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .issue-link:hover {
+      color: var(--brand-red-dark);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .issue-card-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .issue-card-head h3 {
+        font-size: 18px;
+      }
+
+      .issue-card-body > p {
+        font-size: 14px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1037,64 +1153,115 @@
           </p>
         </div>
 
-        <table class="problem-table">
-          <thead>
-            <tr>
-              <th>実現したいこと</th>
-              <th>当社の主な支援</th>
-            </tr>
-          </thead>
+        <div class="issue-card-grid">
+          <article class="issue-card">
+            <div class="issue-card-head">
+              <h3>AI活用の目的と進め方を具体化したい</h3>
+            </div>
+            <div class="issue-card-body">
+              <p>
+                AIをどの業務で、どのように活用するべきかが明確でないままでは、PoCや導入を進めても成果につながりにくい場合があります。
+              </p>
+              <div class="issue-support-box">
+                <h4>当社の主な支援</h4>
+                <p>
+                  対象業務、活用シーン、期待する効果を整理し、PoCや導入に向けた進め方を支援します。
+                </p>
+              </div>
+              <a class="issue-link support-link" data-category="planning">関連サービスを見る →</a>
+            </div>
+          </article>
 
-          <tbody>
-            <tr>
-              <td>AI活用の目的と進め方を具体化したい</td>
-              <td>
-                対象業務、活用シーン、期待する効果を整理し、PoCや導入に向けた進め方を支援します。<br />
-                <a class="support-link" data-category="planning">関連サービスを見る →</a>
-              </td>
-            </tr>
+          <article class="issue-card">
+            <div class="issue-card-head">
+              <h3>社内ナレッジを検索・活用しやすくしたい</h3>
+            </div>
+            <div class="issue-card-body">
+              <p>
+                社内ドキュメントや業務ノウハウが分散していると、必要な情報にすばやくアクセスできず、活用も進みにくくなります。
+              </p>
+              <div class="issue-support-box">
+                <h4>当社の主な支援</h4>
+                <p>
+                  社内ドキュメントや業務データをAIが参照できるようにし、必要な情報をすばやく探せる環境づくりを支援します。
+                </p>
+              </div>
+              <a class="issue-link support-link" data-category="rag">関連サービスを見る →</a>
+            </div>
+          </article>
 
-            <tr>
-              <td>社内ナレッジを検索・活用しやすくしたい</td>
-              <td>
-                社内ドキュメントや業務データをAIが参照できるようにし、必要な情報をすばやく探せる環境づくりを支援します。<br />
-                <a class="support-link" data-category="rag">関連サービスを見る →</a>
-              </td>
-            </tr>
+          <article class="issue-card">
+            <div class="issue-card-head">
+              <h3>蓄積データを分析・意思決定に活かしたい</h3>
+            </div>
+            <div class="issue-card-body">
+              <p>
+                データは蓄積されているものの、分析やレポーティングに十分活用できず、経営判断や業務改善につながっていないケースがあります。
+              </p>
+              <div class="issue-support-box">
+                <h4>当社の主な支援</h4>
+                <p>
+                  社内に蓄積されたデータを整理し、分析やレポーティング、経営・業務判断に活用しやすい状態に整えます。
+                </p>
+              </div>
+              <a class="issue-link support-link" data-category="data-platform">関連サービスを見る →</a>
+            </div>
+          </article>
 
-            <tr>
-              <td>蓄積データを分析・意思決定に活かしたい</td>
-              <td>
-                社内に蓄積されたデータを整理し、分析やレポーティング、経営・業務判断に活用しやすい状態に整えます。<br />
-                <a class="support-link" data-category="data-platform">関連サービスを見る →</a>
-              </td>
-            </tr>
+          <article class="issue-card">
+            <div class="issue-card-head">
+              <h3>セキュリティを考慮してAIを活用したい</h3>
+            </div>
+            <div class="issue-card-body">
+              <p>
+                機密情報や個人情報を含むデータを扱う場合、安全性や利用ルールを考慮したAI活用が必要です。
+              </p>
+              <div class="issue-support-box">
+                <h4>当社の主な支援</h4>
+                <p>
+                  権限管理、利用ルール、ガバナンスを考慮した安全なAI利用環境づくりを支援します。
+                </p>
+              </div>
+              <a class="issue-link support-link" data-category="security">関連サービスを見る →</a>
+            </div>
+          </article>
 
-            <tr>
-              <td>セキュリティを考慮してAIを活用したい</td>
-              <td>
-                機密情報や個人情報を扱うAI活用に向けて、権限管理、利用ルール、ガバナンスを考慮した環境づくりを支援します。<br />
-                <a class="support-link" data-category="security">関連サービスを見る →</a>
-              </td>
-            </tr>
+          <article class="issue-card">
+            <div class="issue-card-head">
+              <h3>PoCから実運用へつなげたい</h3>
+            </div>
+            <div class="issue-card-body">
+              <p>
+                AI活用がPoC止まりになり、本番導入や継続的な活用につながらないケースも少なくありません。
+              </p>
+              <div class="issue-support-box">
+                <h4>当社の主な支援</h4>
+                <p>
+                  活用目的や評価観点を整理し、PoC、MVP、本番展開、運用改善まで見据えた導入を支援します。
+                </p>
+              </div>
+              <a class="issue-link support-link" data-category="production">関連サービスを見る →</a>
+            </div>
+          </article>
 
-            <tr>
-              <td>PoCから実運用へつなげたい</td>
-              <td>
-                活用目的や評価観点を整理し、PoC、MVP、本番展開、運用改善まで見据えた導入を支援します。<br />
-                <a class="support-link" data-category="production">関連サービスを見る →</a>
-              </td>
-            </tr>
-
-            <tr>
-              <td>既存のDB・クラウド環境を活かしてAI活用を進めたい</td>
-              <td>
-                既存のデータベースやクラウド環境を活かしながら、段階的にAI・データ活用基盤を整備します。<br />
-                <a class="support-link" data-category="cloud">関連サービスを見る →</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          <article class="issue-card">
+            <div class="issue-card-head">
+              <h3>既存のDB・クラウド環境を活かしてAI活用を進めたい</h3>
+            </div>
+            <div class="issue-card-body">
+              <p>
+                既存のデータベースやクラウド基盤を活かしながら、無理なく段階的にAI・データ活用へつなげたいニーズがあります。
+              </p>
+              <div class="issue-support-box">
+                <h4>当社の主な支援</h4>
+                <p>
+                  既存のデータベースやクラウド環境を活かしながら、段階的にAI・データ活用基盤を整備します。
+                </p>
+              </div>
+              <a class="issue-link support-link" data-category="cloud">関連サービスを見る →</a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -1125,6 +1292,7 @@
             data-categories="planning data-platform rag cloud security production"
           >
             <div class="service-content">
+              <p class="card-label">AI活用基盤</p>
               <h3>AI Ready Platform on OCI 導入支援サービス</h3>
 
               <p>
@@ -1141,6 +1309,7 @@
             data-categories="data-platform"
           >
             <div class="service-content">
+              <p class="card-label">データ統合・AI活用基盤</p>
               <h3>CData Sync 導入・データ連携支援</h3>
 
               <p>
@@ -1157,6 +1326,7 @@
   data-categories="rag"
 >
   <div class="service-content">
+    <p class="card-label">RAG・AIチャット活用</p>
     <h3>【仮】サービスA（RAG・AIチャット活用）</h3>
 
     <p>
@@ -1173,6 +1343,7 @@
   data-categories="security"
 >
   <div class="service-content">
+    <p class="card-label">セキュリティ・ガバナンス</p>
     <h3>【仮】サービスB（セキュリティ・ガバナンス）</h3>
 
     <p>
@@ -1189,6 +1360,7 @@
   data-categories="production"
 >
   <div class="service-content">
+    <p class="card-label">PoC・実運用化支援</p>
     <h3>【仮】サービスC（PoC・実運用化支援）</h3>
 
     <p>
@@ -1205,6 +1377,7 @@
   data-categories="cloud"
 >
   <div class="service-content">
+    <p class="card-label">クラウド・データ基盤</p>
     <h3>【仮】サービスD（クラウド・データ基盤）</h3>
 
     <p>
@@ -1229,12 +1402,7 @@
       <a href="https://pasona-dataanddesign.co.jp/contact/" class="btn btn-primary">お問い合わせ</a>
     </section>
   </main>
-
-  <div class="wire-note">
-    ※ワイヤーフレーム確認用のHTMLです。実際のデザイン・文言・リンク先は制作時に調整してください。
-  </div>
-
-  <script>
+<script>
     const tabs = document.querySelectorAll(".tab");
     const serviceCards = document.querySelectorAll(".service-card");
     const supportLinks = document.querySelectorAll(".support-link");

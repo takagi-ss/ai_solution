@@ -816,6 +816,146 @@
       display: none;
     }
 
+  
+
+    /* =========================
+       Final button unification
+       DB / Cloud / AI 共通
+    ========================= */
+
+    /* FV / CTAの主要ボタン */
+    .hero-actions .btn,
+    .cta .btn,
+    .cta .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 200px;
+      min-width: 200px;
+      height: 48px;
+      min-height: 48px;
+      padding: 0 24px;
+      border: 1.5px solid #ED1C24;
+      border-radius: 999px;
+      background: #fff;
+      color: #ED1C24;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: 0.2s ease;
+    }
+
+    .hero-actions .btn::after,
+    .cta .btn::after,
+    .cta .btn-primary::after {
+      content: "›";
+      display: inline-block;
+      margin-left: 2px;
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 700;
+      transform: translateY(-1px);
+      flex-shrink: 0;
+    }
+
+    .hero-actions .btn:hover,
+    .cta .btn:hover,
+    .cta .btn-primary:hover {
+      border-color: #ED1C24;
+      background: #ED1C24;
+      color: #fff;
+    }
+
+    /* サービスカード内の「詳しく見る」ボタン */
+    .detail-btn,
+    .service-content .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-width: 0;
+      min-height: 42px;
+      height: 42px;
+      margin-top: auto;
+      padding: 0 18px;
+      border: 1.5px solid #ED1C24;
+      border-radius: 999px;
+      background: #fff;
+      color: #ED1C24;
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 1;
+      white-space: nowrap;
+      transition: 0.2s ease;
+    }
+
+    .detail-btn::after,
+    .service-content .btn::after {
+      content: "›";
+      display: inline-block;
+      margin-left: 2px;
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 700;
+      transform: translateY(-1px);
+      flex-shrink: 0;
+    }
+
+    .detail-btn:hover,
+    .service-content .btn:hover {
+      border-color: #ED1C24;
+      background: #ED1C24;
+      color: #fff;
+    }
+
+    /* フィルターボタン / タブ */
+    .filter-chip,
+    .tab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 7px 18px;
+      border: 1px solid #cfd9e8;
+      border-radius: 999px;
+      background: #fff;
+      color: #020617;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .filter-chip:hover,
+    .tab:hover {
+      border-color: #ED1C24;
+      color: #ED1C24;
+      background: #FFF7F7;
+    }
+
+    .filter-chip.is-active,
+    .tab.is-active {
+      border-color: #ED1C24;
+      background: #ED1C24;
+      color: #fff;
+    }
+
+    @media (max-width: 720px), (max-width: 768px) {
+      .hero-actions .btn,
+      .cta .btn,
+      .cta .btn-primary {
+        width: 100%;
+        max-width: 280px;
+        min-width: 0;
+      }
+    }
+
   </style>
 </head>
 

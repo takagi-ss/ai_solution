@@ -767,6 +767,55 @@
       }
     }
 
+
+    /* =========================
+       Requested adjustment
+       Section title center / FV subtle grid
+    ========================= */
+
+    /* PROCESS / ISSUES / SERVICES の見出しを中央寄せ */
+    .section-title {
+      text-align: center;
+    }
+
+    .section-title p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-label {
+      text-align: center;
+    }
+
+    /* FV背景の薄い目盛り線を明確化 */
+    .hero::before {
+      background-image:
+        linear-gradient(rgba(237, 28, 36, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(237, 28, 36, 0.055) 1px, transparent 1px);
+      background-size: 56px 56px;
+      opacity: 0.82;
+      mask-image: none;
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        text-align: center;
+      }
+
+      .section-title p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    /* =========================
+       FV grid line removal
+    ========================= */
+
+    .hero::before {
+      display: none;
+    }
+
   </style>
 </head>
 

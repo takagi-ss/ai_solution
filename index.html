@@ -576,6 +576,197 @@
         padding: 72px 20px;
       }
     }
+
+
+    /* =========================
+       Red brand override
+       FV / Button / Step Number
+    ========================= */
+
+    :root {
+      --brand-red: #ED1C24;
+      --brand-red-dark: #C81018;
+      --brand-red-soft: #FDE8E9;
+      --brand-bg: #FFF7F7;
+
+      /* 既存CSSの変数参照を赤系に置き換え */
+      --blue: var(--brand-red);
+      --blue-dark: var(--brand-red-dark);
+      --blue-deep: var(--brand-red-dark);
+      --navy: var(--brand-red);
+      --light-blue: var(--brand-red-soft);
+      --bg: var(--brand-bg);
+    }
+
+    /* FV背景を赤・薄ピンク系に統一 */
+    .hero {
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(237, 28, 36, 0.10), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(237, 28, 36, 0.08), transparent 34%),
+        linear-gradient(135deg, #fff7f7 0%, #ffffff 100%);
+    }
+
+    .hero::before {
+      background-image:
+        linear-gradient(rgba(237, 28, 36, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(237, 28, 36, 0.055) 1px, transparent 1px);
+      opacity: 0.75;
+    }
+
+    .hero::after {
+      right: -160px;
+      top: 86px;
+      width: 540px;
+      height: 360px;
+      background:
+        radial-gradient(circle at 30% 35%, rgba(237, 28, 36, 0.12) 0 3px, transparent 4px),
+        radial-gradient(circle at 62% 25%, rgba(237, 28, 36, 0.10) 0 3px, transparent 4px),
+        radial-gradient(circle at 70% 68%, rgba(237, 28, 36, 0.08) 0 3px, transparent 4px),
+        linear-gradient(135deg, transparent 0 45%, rgba(237, 28, 36, 0.10) 46% 47%, transparent 48%),
+        linear-gradient(30deg, transparent 0 54%, rgba(237, 28, 36, 0.08) 55% 56%, transparent 57%);
+      opacity: 0.8;
+    }
+
+    .hero-label {
+      border: 1px solid rgba(237, 28, 36, 0.25);
+      background: var(--brand-red-soft);
+      color: var(--brand-red);
+    }
+
+    .hero h1 {
+      color: var(--text);
+    }
+
+    .hero p {
+      color: var(--muted);
+    }
+
+    /* ボタンを赤アウトラインに統一 */
+    .btn,
+    .btn-primary,
+    .btn-secondary,
+    .hero .btn-primary,
+    .hero .btn-secondary,
+    .cta .btn-primary,
+    .service-content .btn {
+      border: 1.5px solid var(--brand-red);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--brand-red);
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .btn::after,
+    .btn-primary::after,
+    .btn-secondary::after {
+      content: "›";
+      display: inline-block;
+      margin-left: 12px;
+      margin-top: -1px;
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .btn:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .hero .btn-primary:hover,
+    .hero .btn-secondary:hover,
+    .cta .btn-primary:hover,
+    .service-content .btn:hover {
+      border-color: var(--brand-red);
+      background: var(--brand-red);
+      color: #fff;
+    }
+
+    .hero-actions .btn {
+      width: auto;
+      min-width: 184px;
+      height: 48px;
+      padding: 0 26px;
+    }
+
+    .service-content .btn {
+      min-width: 136px;
+      height: 42px;
+      padding: 0 18px;
+    }
+
+    /* ステップ番号を赤系に統一 */
+    .step-label {
+      background: var(--brand-red-soft);
+      color: var(--brand-red);
+      border-radius: 4px;
+      min-width: 46px;
+      height: 32px;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    /* 領域カラーを使わず、ラベル・リンク・タブも赤系へ */
+    .section-label,
+    .support-link {
+      color: var(--brand-red);
+    }
+
+    .problem-table th {
+      background: var(--brand-bg);
+    }
+
+    .tab:hover {
+      border-color: var(--brand-red);
+      color: var(--brand-red);
+      background: var(--brand-bg);
+    }
+
+    .tab.is-active {
+      background: var(--brand-red);
+      color: #fff;
+      border-color: var(--brand-red);
+    }
+
+    /* CTAもFVと同じ赤・薄ピンク系に統一 */
+    .cta {
+      background:
+        radial-gradient(circle at top left, rgba(237, 28, 36, 0.10), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(237, 28, 36, 0.08), transparent 34%),
+        linear-gradient(135deg, #fff7f7 0%, #ffffff 100%);
+      color: var(--text);
+    }
+
+    .cta h2 {
+      color: var(--text);
+    }
+
+    .cta p {
+      color: var(--muted);
+    }
+
+    .cta .btn-primary {
+      width: auto;
+      min-width: 184px;
+      height: 48px;
+      padding: 0 26px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-actions .btn,
+      .cta .btn-primary {
+        width: 100%;
+        max-width: 280px;
+      }
+
+      .hero::after {
+        right: -240px;
+        top: 120px;
+        opacity: 0.35;
+      }
+    }
+
   </style>
 </head>
 
